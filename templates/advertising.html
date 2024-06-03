@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오뚜기컵밥</title>
+    <link rel="stylesheet" href="{{ url_for('myapp.static', filename='/styles1.css') }}" />
+</head>
+<body> 
+
+ 
+    
+    <img src="/myapp/static/Slaughter.png" alt="Slaughter">
+    <div class="container">
+        <h1 id="ver">에프터이펙트 배너광고</h1>
+        <div class="pont">
+            <label class="cup">오뚜기 맛있는 컵밥</label>
+            
+            <table>
+             <div class="socd">
+                 <strong><h3>영양정보 <span class="Capacity">총 내용량310g/425kcal</span></h3></strong>
+                 <h5 style="text-align: end;">1일 영양성분기준치에 대한 비율</h5>
+                 <hr>
+                 <tbody>
+                     <tr>
+                         <td>나트륨 &nbsp; 860mg 43%</td>
+                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;지방&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11g 20%</td>
+                        </tr>
+                        <tr>
+                            <td></td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>탄수화물&nbsp;&nbsp;&nbsp;&nbsp; 60g 21%</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;트랜스지방 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0g &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>당류 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8g 8%</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;포화지방&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12.5g 17%</td>
+                        </tr>
+                        <tr>
+                            <td></td> 
+                            <td></td> 
+                        </tr>
+                        <tr>
+                            <td>콜레스테롤 25mg 8%</td>
+                            
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;단백질 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13mg 24%</td>
+                        </tr>
+                    </tbody>
+                </div>   
+                </table>
+                
+                <p>
+                    오뚜기의 맛있는 컵밥은 간편하고 맛있는 한 끼 식사를&nbsp;&nbsp; 즐길 수 있는 제품 시리즈입니다. 이 제품들은 다양한 종류의 밥과 함께 맛있는 재료를 섞어 만든 컵 형태의 미니 식사입니다.
+                    오뚜기의 컵밥은 다양한 종류가 있어서 선택의 폭이 넓습니다. 일부 제품은 한 그릇에 모든 재료가 &nbsp;&nbsp; 들어있어서 뜯어서 간편하게 조리할 수 있고, 다른 제품들은 건더기와 소스를 분리해서 신선함을 유지하며 먹을 수 있도록 제공됩니다.
+                </p>
+
+       
+
+
+        </div>
+            
+        <div id="video-container" class="Typo_animation">
+            
+        </div>
+        <div class="controls">
+            <button onClick="history.back();">Back</button>
+        </div> 
+    </div>  
+
+
+    <script>
+        window.onload = function() {
+            playVideo('/myapp/static/Ads.mp4');
+        };
+
+        function playVideo(videoFile) {
+            let videoContainer = document.getElementById('video-container');
+            videoContainer.innerHTML = ''; 
+            let video = document.createElement('video');
+            video.setAttribute('controls', true);
+            video.setAttribute('width', '640'); 
+            video.setAttribute('height', '360'); 
+            let source = document.createElement('source');
+            source.setAttribute('src', videoFile);
+            source.setAttribute('type', 'video/mp4');
+            video.appendChild(source);
+            videoContainer.appendChild(video);
+            videoContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+   
+</body>
+</html>

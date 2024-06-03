@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구찌 광고</title>
+    <link rel="stylesheet" href="{{ url_for('myapp.static', filename='/styles4.css') }}" />
+</head>
+<body>
+
+    
+    <div class="wrapper">
+        <div class="controlsds">
+            <h1>모션 그래픽 구찌 광고</h1> 
+            <div id="video-container" class="Typo_animation">
+                <!-- Your video content goes here -->
+            </div>
+        </div>
+    </div>
+    <button class="rod" onClick="history.back();">Back</button>
+    
+    <script>
+         window.onload = function() {
+            playVideo('/myapp/static/motion_graphics.mp4');
+        };
+        function playVideo(videoFile) {
+            let videoContainer = document.getElementById('video-container');
+            videoContainer.innerHTML = ''; 
+            let video = document.createElement('video');
+            video.setAttribute('controls', true);
+            video.setAttribute('width', '640'); 
+            video.setAttribute('height', '360'); 
+            let source = document.createElement('source');
+            source.setAttribute('src', videoFile);
+            source.setAttribute('type', 'video/mp4');
+            video.appendChild(source);
+            videoContainer.appendChild(video);
+            videoContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
