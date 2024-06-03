@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and Logout</title>
-    <link rel="stylesheet" href="/myapp/static/styles.css">
+    <link rel="stylesheet" href="{{ url_for('myapp.static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container" id="login-container">
@@ -14,6 +14,6 @@
         <button onclick="login()">Login</button>
     </div>
 
-    <script src="/myapp/static/script.js"></script>
+    <script src="{{ url_for('myapp.static', filename='script.js') }}"></script>
 </body>
 </html>
